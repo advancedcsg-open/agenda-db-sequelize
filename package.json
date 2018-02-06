@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/C45tr0/agenda-db-sequelize.git"
+    "url": "git://github.com/advancedcsg-open/agenda-db-sequelize.git"
   },
   "keywords": [
     "agenda",
@@ -35,12 +35,13 @@
   "author": "C45tr0",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/C45tr0/agenda-db-sequelize/issues"
+    "url": "https://github.com/advancedcsg-open/agenda-db-sequelize/issues"
   },
-  "homepage": "https://github.com/C45tr0/agenda-db-sequelize#readme",
+  "homepage": "https://github.com/advancedcsg-open/agenda-db-sequelize#readme",
   "dependencies": {
     "agenda": "github:c45tr0/agenda#db-adapters",
     "env-cmd": "^5.0.0",
+    "pg": "^6.4.2",
     "sequelize": "^4.32.1"
   },
   "devDependencies": {
