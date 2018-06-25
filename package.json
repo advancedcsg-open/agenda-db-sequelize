@@ -39,10 +39,10 @@
   },
   "homepage": "https://github.com/advancedcsg-open/agenda-db-sequelize#readme",
   "dependencies": {
-    "agenda": "github:c45tr0/agenda#db-adapters",
+    "agenda": "github:paulmowat/agenda#db-adapters",
     "env-cmd": "^5.0.0",
-    "pg": "^6.4.2",
-    "sequelize": "^4.32.1"
+    "pg": "7.4.3",
+    "sequelize": "4.38.0"
   },
   "devDependencies": {
     "coveralls": "~2.11.4",
