@@ -5,16 +5,16 @@ on:
       - master
 
 env:
-  - SEQ_MYSQL_DB: sequelize_test
-  - SEQ_MYSQL_USER: sequelize_test
-  - SEQ_MYSQL_PW: sequelize_test
-  - SEQ_MYSQL_HOST: 127.0.0.1
-  - SEQ_MYSQL_PORT: 8999
-  - SEQ_PG_DB: sequelize_test
-  - SEQ_PG_USER: sequelize_test
-  - SEQ_PG_PW: sequelize_test
-  - SEQ_PG_HOST: 127.0.0.1
-  - SEQ_PG_PORT: 8998
+  SEQ_MYSQL_DB: sequelize_test
+  SEQ_MYSQL_USER: sequelize_test
+  SEQ_MYSQL_PW: sequelize_test
+  SEQ_MYSQL_HOST: 127.0.0.1
+  SEQ_MYSQL_PORT: 8999
+  SEQ_PG_DB: sequelize_test
+  SEQ_PG_USER: sequelize_test
+  SEQ_PG_PW: sequelize_test
+  SEQ_PG_HOST: 127.0.0.1
+  SEQ_PG_PORT: 8998
 
 jobs:
   test:
