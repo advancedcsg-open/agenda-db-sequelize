@@ -1,0 +1,38 @@
+name: ci/cd
+on:
+  push:
+    branches:
+      - master
+
+env:
+  - SEQ_MYSQL_DB: sequelize_test
+  - SEQ_MYSQL_USER: sequelize_test
+  - SEQ_MYSQL_PW: sequelize_test
+  - SEQ_MYSQL_HOST: 127.0.0.1
+  - SEQ_MYSQL_PORT: 8999
+  - SEQ_PG_DB: sequelize_test
+  - SEQ_PG_USER: sequelize_test
+  - SEQ_PG_PW: sequelize_test
+  - SEQ_PG_HOST: 127.0.0.1
+  - SEQ_PG_PORT: 8998
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '10', '8' ]
+    name: testing on node ${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: setup node
+        uses: actions/setup-node@v1.2.0
+        with:
+          node-version: ${{ matrix.node }}
+      - name: init
+        run: |
+          npm install
+          if [ $POSTGRES_VER ] || [ $MYSQL_VER ]; then docker-compose up -d ${POSTGRES_VER} ${MYSQL_VER}; fi
+          if [ $MYSQL_VER ]; then docker run --link ${MYSQL_VER}:db -e CHECK_PORT=3306 -e CHECK_HOST=db --net sequelize_default giorgos/takis; fi
+          if [ $POSTGRES_VER ]; then docker run --link ${POSTGRES_VER}:db -e CHECK_PORT=5432 -e CHECK_HOST=db --net sequelize_default giorgos/takis; fi
+      - run: npm run test
