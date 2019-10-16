@@ -37,8 +37,8 @@
   "dependencies": {
     "agenda": "github:paulmowat/agenda#db-adapters",
     "env-cmd": "^5.1.0",
-    "pg": "^7.12.1",
-    "sequelize": "^4.44.3"
+    "pg": "7.4.3",
+    "sequelize": "4.38.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.16",
