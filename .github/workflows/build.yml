@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - '.github/workflows/*'
 
 env:
   SEQ_MYSQL_DB: sequelize_test
